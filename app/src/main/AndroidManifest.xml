@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CoroutinExample">
-        <activity android:name=".two_long_running.TwoLongRunningActivity"></activity>
+        <activity
+            android:name=".ScopeActivity"
+            android:exported="true" />
+        <activity android:name=".two_long_running.TwoLongRunningActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
