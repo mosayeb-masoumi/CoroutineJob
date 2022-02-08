@@ -5,32 +5,38 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".SerieParallelActivity">
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="btn_scopes_avtivity"
-        android:id="@+id/btn_scopes"/>
+        android:layout_marginTop="30dp"
+        android:text="btn_serie tasks"
+        android:id="@+id/btn_serie_tasks"/>
+
+
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="btn_start"
-        android:id="@+id/btn_start"/>
+        android:text="btn_parallel launch"
+        android:id="@+id/btn_parallel_launch"/>
+
+
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="btn_cancel"
-        android:id="@+id/btn_cancel"/>
+        android:text="btn_parallel async"
+        android:id="@+id/btn_parallel_async"/>
+
+
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="text"
-        android:layout_gravity="center_horizontal"
-        android:id="@+id/txt"/>
-
-
+        android:text="txt"
+        android:layout_marginTop="10dp"
+        android:gravity="center_horizontal"
+        android:id="@+id/txt_serie_parallel"/>
 
 
 </LinearLayout>

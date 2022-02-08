@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var job: Job
     var count = 1
 
-    private lateinit var jobParallel1: Job
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,67 +56,12 @@ class MainActivity : AppCompatActivity() {
         }
 
 
-        btn_serie_tasks.setOnClickListener {
-            doSerieTasks()
-        }
-
-
-
-
-        btn_parallel_tasks.setOnClickListener {
-            doParallelTasks()
-        }
 
 
 
     }
 
-    private fun doParallelTasks() {
 
-//        jobParallel1 = Job()   // Job() (if one child failed the other child will failed too)
-        jobParallel1 = SupervisorJob()   // superiorJob() (if one child failed the other child will do its job)
-        val handler = CoroutineExceptionHandler { _, _ -> }
-        val scope = CoroutineScope(IO + jobParallel1 + handler)
-
-        //child1
-        scope.launch {
-            val result1 = withContext(IO) { fetchFirstData() }
-            showInText(result1)
-        }
-
-        //child2
-        scope.launch {
-            val result2 = withContext(IO) { fetchSecondData() }
-            showInText(result2)
-        }
-
-
-    }
-
-
-    private fun doSerieTasks() {
-        CoroutineScope(IO).launch {
-
-            val result1 = withContext(IO) { fetchFirstData() }
-            val result2 = withContext(IO) { fetchSecondData() }
-
-            val total = result1 + result2
-            var tt = total
-
-        }
-    }
-
-
-    private suspend fun fetchFirstData(): Int {
-        delay(4000)
-        throw IOException()  // to create exception  and failed the return
-        return 1
-    }
-
-    private suspend fun fetchSecondData(): Int {
-        delay(8000)
-        return 2
-    }
 
 
     private fun startCounting() {
