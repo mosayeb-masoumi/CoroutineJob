@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Toast
+import androidx.lifecycle.LiveData
 import com.example.coroutinexample.R
 import kotlinx.android.synthetic.main.activity_coroutin_view_model.*
 
@@ -30,7 +31,11 @@ class CoroutinViewModelActivity : AppCompatActivity() {
         }
 
 
+//        viewModel = ViewModelProviders.of(this).get(MyViewModel::class.java)
+
     }
+
+
 
     private fun fetchData() {
 
@@ -38,6 +43,11 @@ class CoroutinViewModelActivity : AppCompatActivity() {
         loading.visibility = View.VISIBLE
         btn_fetch_data.visibility = View.GONE
 
+
+//        noteViewModel.getNotesLiveData().removeObservers(this);
+//        noteViewModel.getNotesLiveData().observe(this, notesObserver);
+
+//        viewModel?.getList()?.removeObservers(this)
         viewModel?.getList()?.observe(this, {
             when (it != null) {
                 it.size > 0 -> {
@@ -58,8 +68,12 @@ class CoroutinViewModelActivity : AppCompatActivity() {
             loading.visibility = View.GONE
             btn_fetch_data.visibility = View.VISIBLE
 
+            viewModel?.getList()?.removeObservers(this)
+
         })
 
 
     }
 }
+
+
