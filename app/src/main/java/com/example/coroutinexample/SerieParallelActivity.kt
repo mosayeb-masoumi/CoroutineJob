@@ -21,7 +21,32 @@ class SerieParallelActivity : AppCompatActivity() {
     The difference is that the launch{} does not return anything and the async{}returns  by await()
 
 
+    When we use async, it will run in parallel and wait for result by using await
     When we use withContext, it will run in series instead of parallel. That is a major difference.
+
+
+
+    Use withContext when you do not need the parallel execution.(use for serie tasks)
+    Use async only when you need the parallel execution.
+    Both withContext and async can be used to get the result which is not possible with the launch.
+    Use withContext to return the result of a single task.
+    Use async for results from multiple tasks that run in parallel.
+
+
+
+    override fun onDestroy() {
+    job.cancel() // cancel the Job
+    super.onDestroy()
+    }
+
+
+    GlobalScope.launch(Dispatchers.Main) {
+    val userOne = async(Dispatchers.IO) { fetchFirstUser() }
+    val userTwo = async(Dispatchers.IO) { fetchSecondUser() }
+    }
+    Here, even if the activity gets destroyed, the fetchUser functions will continue running as we have used the GlobalScope.
+
+
      **/
 
 
@@ -122,8 +147,8 @@ class SerieParallelActivity : AppCompatActivity() {
         CoroutineScope(Dispatchers.IO + jobSerie + handler).launch {
 
            /** When we use withContext, it will run in series instead of parallel. That is a major difference.**/
-            val result1 = withContext(Dispatchers.IO) { fetchFirstData() }
-            val result2 = withContext(Dispatchers.IO) { fetchSecondData() }
+            val result1 = withContext(Dispatchers.IO) { fetchFirstDataSerie() }
+            val result2 = withContext(Dispatchers.IO) { fetchSecondDataSerie(result1) }
 
             val total = result1 + result2
             showInText(total)
@@ -133,12 +158,16 @@ class SerieParallelActivity : AppCompatActivity() {
 
 
 
+    private suspend fun fetchFirstDataSerie(): Int {
+        delay(2000)
+        return 1
+    }
 
-
-
-
-
-
+    private suspend fun fetchSecondDataSerie(result1: Int): Int {
+        delay(2000)
+        val result2 = result1+5
+        return result2
+    }
 
 
 
@@ -161,5 +190,14 @@ class SerieParallelActivity : AppCompatActivity() {
         withContext(Dispatchers.Main) {
             txt_serie_parallel.text = count.toString()
         }
+    }
+
+
+    override fun onDestroy() {
+        super.onDestroy()
+
+        jobSerie.cancel()
+        jobParallelAsync.cancel()
+        jobParallelLaunch.cancel()
     }
 }

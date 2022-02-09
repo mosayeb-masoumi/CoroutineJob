@@ -25,5 +25,13 @@
         android:layout_marginTop="5dp"
         android:id="@+id/btn_serie_parallel_activity"/>
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:text="Coroutin_ViewModel_activity"
+        android:layout_marginTop="5dp"
+        android:id="@+id/btn_Coroutin_ViewModel_activity"/>
 
 </LinearLayout>
