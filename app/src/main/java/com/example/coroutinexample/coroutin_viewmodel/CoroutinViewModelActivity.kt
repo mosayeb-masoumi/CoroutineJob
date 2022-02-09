@@ -7,15 +7,19 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Toast
-import androidx.lifecycle.LiveData
 import com.example.coroutinexample.R
 import kotlinx.android.synthetic.main.activity_coroutin_view_model.*
+import androidx.lifecycle.ViewModelProvider
+
+
+
 
 
 class CoroutinViewModelActivity : AppCompatActivity() {
 
     var context: Context? = null
     var viewModel: MyViewModel? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,13 +29,15 @@ class CoroutinViewModelActivity : AppCompatActivity() {
         context = this
         viewModel = MyViewModel(context as CoroutinViewModelActivity)
 
+
+
         btn_fetch_data.setOnClickListener {
 
             fetchData()
         }
 
 
-//        viewModel = ViewModelProviders.of(this).get(MyViewModel::class.java)
+
 
     }
 
@@ -44,10 +50,9 @@ class CoroutinViewModelActivity : AppCompatActivity() {
         btn_fetch_data.visibility = View.GONE
 
 
-//        noteViewModel.getNotesLiveData().removeObservers(this);
-//        noteViewModel.getNotesLiveData().observe(this, notesObserver);
 
-//        viewModel?.getList()?.removeObservers(this)
+
+        viewModel?.getList()?.removeObservers(this)
         viewModel?.getList()?.observe(this, {
             when (it != null) {
                 it.size > 0 -> {
@@ -71,6 +76,7 @@ class CoroutinViewModelActivity : AppCompatActivity() {
             viewModel?.getList()?.removeObservers(this)
 
         })
+
 
 
     }
