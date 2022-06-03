@@ -34,4 +34,10 @@
         android:layout_marginTop="5dp"
         android:id="@+id/btn_Coroutin_ViewModel_activity"/>
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="btn_goto_callApi_with_coroutine"
+        android:id="@+id/btn_call_api"/>
+
 </LinearLayout>

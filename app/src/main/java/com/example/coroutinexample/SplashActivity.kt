@@ -4,6 +4,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.coroutinexample.coroutin_viewmodel.CoroutinViewModelActivity
+import com.example.coroutinexample.retrofit_livedata_couroutine.CallServerActivity
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_splash.*
 
 class SplashActivity : AppCompatActivity() {
@@ -25,6 +27,9 @@ class SplashActivity : AppCompatActivity() {
         }
 
 
+        btn_call_api.setOnClickListener {
+            startActivity(Intent(MainActivity@this, CallServerActivity::class.java))
+        }
 
     }
 

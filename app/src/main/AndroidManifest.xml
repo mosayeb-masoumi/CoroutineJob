@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.coroutinexample" >
+    package="com.example.coroutinexample">
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -8,7 +10,10 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.CoroutinExample" >
+        android:theme="@style/Theme.CoroutinExample">
+        <activity
+            android:name=".retrofit_livedata_couroutine.CallServerActivity"
+            android:exported="false" />
         <activity
             android:name=".coroutin_viewmodel.CoroutinViewModelActivity"
             android:exported="true" />
@@ -21,7 +26,7 @@
         <activity
             android:name=".ScopeActivity"
             android:exported="true" />
-        <activity android:name=".SplashActivity" >
+        <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
