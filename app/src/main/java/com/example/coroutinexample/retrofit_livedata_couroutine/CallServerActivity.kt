@@ -20,7 +20,18 @@ class CallServerActivity : AppCompatActivity() ,RemoteErrorEmitter {
 
 
 
-        var thePosts = apiCall<MutableList<Post>>(this , {webService.getPosts()}).observe(
+//        var thePosts = apiCall<MutableList<Post>>(this , {webService.getPosts()}).observe(
+//            this, Observer {
+//                if(it != null){
+//                    for (item in it){
+//                        Log.d("Here ", item.title)
+//                    }
+//
+//                }
+//            }
+//        )
+
+        var thePosts = apiCall<MutableList<Post>>(this) { webService.getPosts() }.observe(
             this, Observer {
                 if(it != null){
                     for (item in it){
@@ -30,7 +41,6 @@ class CallServerActivity : AppCompatActivity() ,RemoteErrorEmitter {
                 }
             }
         )
-
 
 
 
