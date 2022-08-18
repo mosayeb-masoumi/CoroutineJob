@@ -3,6 +3,7 @@ package com.example.coroutinexample
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import com.example.coroutinexample.coroutin_example1.Model
 
 class KotlinScopesActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

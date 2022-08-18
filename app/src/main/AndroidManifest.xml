@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.coroutinexample" >
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -14,10 +16,16 @@
         android:theme="@style/Theme.CoroutinExample"
         tools:targetApi="31" >
         <activity
+            android:name=".coroutine_retrofit.CoroutineRetrofitActivity"
+            android:exported="false" />
+        <activity
+            android:name=".coroutine_step_by_step.CoroutneActivity"
+            android:exported="false" />
+        <activity
             android:name=".KotlinScopesActivity"
             android:exported="false" />
         <activity
-            android:name=".CoroutinJobActivity"
+            android:name=".coroutin_example1.CoroutinJobActivity"
             android:exported="false" />
         <activity
             android:name=".SplashActivity"

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".CoroutinJobActivity">
+    tools:context=".coroutin_example1.CoroutinJobActivity">
 
     <Button
         android:layout_width="match_parent"

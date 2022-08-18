@@ -19,6 +19,24 @@
         android:id="@+id/btnCoroutineJobActivity"/>
 
 
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="btnCoroutine"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:id="@+id/btn_coroutine_activity"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="btnCoroutineRetrofit"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:id="@+id/btn_coroutine_retrofit"/>
+
+
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

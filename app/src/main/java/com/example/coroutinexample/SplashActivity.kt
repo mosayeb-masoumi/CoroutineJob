@@ -4,6 +4,9 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.coroutinexample.coroutin_example1.CoroutinJobActivity
+import com.example.coroutinexample.coroutine_retrofit.CoroutineRetrofitActivity
+import com.example.coroutinexample.coroutine_step_by_step.CoroutneActivity
 import com.example.coroutinexample.databinding.ActivitySplashBinding
 
 
@@ -24,8 +27,19 @@ class SplashActivity : AppCompatActivity() {
             startActivity(Intent(this@SplashActivity , CoroutinJobActivity::class.java))
         }
 
+        binding.btnCoroutineActivity.setOnClickListener {
+            startActivity(Intent(this@SplashActivity , CoroutneActivity::class.java))
+        }
+
+
+        binding.btnCoroutineRetrofit.setOnClickListener {
+            startActivity(Intent(this@SplashActivity , CoroutineRetrofitActivity::class.java))
+        }
+
+
         binding.btnKotlinScopes.setOnClickListener {
             startActivity(Intent(this@SplashActivity , KotlinScopesActivity::class.java))
         }
+
     }
 }

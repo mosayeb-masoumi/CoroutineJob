@@ -4,6 +4,8 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/CoroutinExample/app/src/main/res/layout/activity_coroutine_job.xml" value="0.2" />
+        <entry key="..\:/CoroutinExample/app/src/main/res/layout/activity_coroutine_retrofit.xml" value="0.2" />
+        <entry key="..\:/CoroutinExample/app/src/main/res/layout/activity_coroutne.xml" value="0.1" />
         <entry key="..\:/CoroutinExample/app/src/main/res/layout/activity_kotlin_scopes.xml" value="0.2" />
         <entry key="..\:/CoroutinExample/app/src/main/res/layout/activity_main.xml" value="0.1859375" />
         <entry key="..\:/CoroutinExample/app/src/main/res/layout/activity_splash.xml" value="0.2" />
