@@ -8,6 +8,7 @@ import com.example.coroutinexample.coroutin_example1.CoroutinJobActivity
 import com.example.coroutinexample.coroutine_retrofit.CoroutineRetrofitActivity
 import com.example.coroutinexample.coroutine_step_by_step.CoroutneActivity
 import com.example.coroutinexample.databinding.ActivitySplashBinding
+import com.example.coroutinexample.exception_handling.ExceptionHandlingActivity
 
 
 @SuppressLint("CustomSplashScreen")
@@ -34,6 +35,11 @@ class SplashActivity : AppCompatActivity() {
 
         binding.btnCoroutineRetrofit.setOnClickListener {
             startActivity(Intent(this@SplashActivity , CoroutineRetrofitActivity::class.java))
+        }
+
+
+        binding.btnExceptionHandling.setOnClickListener {
+            startActivity(Intent(this@SplashActivity , ExceptionHandlingActivity::class.java))
         }
 
 
