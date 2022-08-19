@@ -19,7 +19,7 @@ class ExceptionHandlingActivity : AppCompatActivity() {
 
 //        example1()
 
-        /**** exception cancel all childs ****/
+        /**** exception cancel all children ****/
 //        example2()
 
         /**** supervisor scope ,exception in one child do not cancel all other children ****/
