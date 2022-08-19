@@ -117,7 +117,7 @@ class CoroutneActivity : AppCompatActivity() {
         Log.d(TAG, "before runBlocking")
         runBlocking {
 
-            // it wont be blocked
+            // it wont be blocked  because of dispatchers.IO
             launch(Dispatchers.IO) {
                 delay(3000L)
                 Log.d(TAG, "finish IO coroutine 1")
@@ -161,7 +161,7 @@ class CoroutneActivity : AppCompatActivity() {
 
     private fun example6() {
         var count = 0
-        var job = GlobalScope.launch(Dispatchers.Default) {
+        val job = GlobalScope.launch(Dispatchers.Default) {
 
             repeat(5) {
                 Log.d(TAG, "coroutine is still working")
@@ -193,7 +193,7 @@ class CoroutneActivity : AppCompatActivity() {
             Log.d(TAG, "finish long running caculation")
         }
 
-        // after 2 seconds the job won't be cancelled because job is involving the forLoop (job hasn't been noticed that was cancelled)
+        // after 2 seconds the job won't be cancelled because job is involving the long run task (job hasn't been noticed that was cancelled)
         runBlocking {
             delay(2000)
             job.cancel()

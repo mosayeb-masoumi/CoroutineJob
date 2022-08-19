@@ -105,8 +105,7 @@ class CoroutinJobActivity : AppCompatActivity() {
 
 
 //        jobParallel1 = Job()   // Job() (if one child failed the other child will failed too)
-        jobParallelLaunch =
-            SupervisorJob()   // superiorJob() (if one child failed the other child will do its job)
+        jobParallelLaunch = SupervisorJob()   // superiorJob() (if one child failed the other child will do its job)
         val handler = CoroutineExceptionHandler { _, _ -> }
         val scope = CoroutineScope(Dispatchers.IO + jobParallelLaunch + handler)
 
